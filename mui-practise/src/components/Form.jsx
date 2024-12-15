@@ -7,8 +7,11 @@ import {
   FormLabel,
   InputLabel,
   MenuItem,
+  Radio,
+  RadioGroup,
   Select,
   TextField,
+  Typography,
 } from "@mui/material";
 import React, { useState } from "react";
 
@@ -19,6 +22,7 @@ const Form = () => {
     email: "",
     course: "",
     terms: false,
+    gender: ""
   });
 
   const handleChange = (e) => {
@@ -33,6 +37,7 @@ const Form = () => {
   };
   return (
     <>
+     <Typography variant="h2" sx={{color:"red"}}>Form Starts</Typography>
       <form action="" onSubmit={handleSubmit}>
         <TextField
           variant="outlined"
@@ -80,6 +85,15 @@ const Form = () => {
         <FormGroup>
           <FormControlLabel label="I agree T&C" control={<Checkbox onChange={()=> setInputs((preInput)=>({...preInput, terms: !inputs.terms}))} />} />
         </FormGroup>
+        <FormControl>
+            <FormLabel>Gender</FormLabel>
+            <RadioGroup name="gender" onChange={handleChange}>
+                <FormControlLabel value="male" label="Male" control={<Radio/>}/>
+                <FormControlLabel value="female" label="Female" control={<Radio/>}/>
+                <FormControlLabel value="other" label="other" control={<Radio/>}/>
+            </RadioGroup>
+        </FormControl>
+        <br /> <br />
         <Button type="submit" variant="contained">
           Submit
         </Button>
