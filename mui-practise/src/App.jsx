@@ -1,8 +1,9 @@
 import "./App.css";
-import { Typography, Button } from "@mui/material";
+
 import Form from "./components/Form";
 import Header from "./components/Header";
 import Cards from "./components/Cards";
+import Modals from "./components/Modals";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <div>
        <Header/>
        <Cards/>
-       
+       <Modals/>
        
         <Form />
       </div>
